@@ -13,7 +13,6 @@ class CreateUsersTable extends Migration {
 	{
 		Schema::create('users', function($table){
 			$table->bigIncrements('id')->unsigned();
-			$table->bigInteger('author')->index();
 			$table->string('username', 50)->unique();
 			$table->string('password', 100);
 			$table->string('name', 100);
