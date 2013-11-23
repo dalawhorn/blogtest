@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-	@if($function == 'edit' && $id > 0)
+	@if(isset($function) && $function == 'edit' && $id > 0)
 		{{ Form::model($post, array('url' => 'admin/update-post')) }}
 		{{ Form::hidden('id', $id) }}
 	@else
