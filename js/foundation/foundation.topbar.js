@@ -284,9 +284,13 @@
       });
     },
 
+    //breakpoint : function () {
+    //  return matchMedia(Foundation.media_queries['medium']).matches;
+    ///},
+    
     breakpoint : function () {
-      return matchMedia(Foundation.media_queries['medium']).matches;
-    },
+	  return matchMedia(Foundation.media_queries['medium']).matches || matchMedia(Foundation.media_queries['small']).matches;
+	},
 
     assemble : function (topbar) {
       var self = this,

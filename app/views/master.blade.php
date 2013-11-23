@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Blog</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
   		<link rel="stylesheet" href="{{ asset('css/foundation.min.css') }}">
   		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -27,7 +28,8 @@
 		
 		@section('footerjs')
 			<script src="{{ asset('js/vendor/jquery.js') }}"></script>
-			<script src="{{ asset('js/foundation.min.js') }}"></script>
+			<script src="{{ asset('js/foundation/foundation.js') }}"></script>
+			<script src="{{ asset('js/foundation/foundation.topbar.js') }}"></script>
 			<script>
 				$(document).foundation();
 			</script>
