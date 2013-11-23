@@ -16,7 +16,16 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
-Route::get('test', function()
-{
-	return View::make('test');
-});
+Route::get('test', 'TestController@getIndex');
+
+Route::get('admin/view-posts', 'AdminController@viewPosts');
+
+Route::get('admin/new-post', 'AdminController@newPost');
+
+Route::get('admin/edit-post/{id}', 'AdminController@editPost');
+
+Route::post('admin/add-post', 'AdminController@addPost');
+
+Route::post('admin/update-post', 'AdminController@updatePost');
+
+Route::get('admin/delete-post/{id}', 'AdminController@deletePost');

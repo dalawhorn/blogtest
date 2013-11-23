@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost:8888/blogtest/laravel',
+	'url' => 'http://localhost:8888/blogtest/',
 
 	/*
 	|--------------------------------------------------------------------------
