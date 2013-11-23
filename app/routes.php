@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+//Route::get('/', function()
+//{
+//	return View::make('hello');
+//});
 
-Route::get('test', 'TestController@getIndex');
+Route::get('/', 'PostController@allPosts');
 
+Route::get('post/{id}', 'PostController@singlePost');
+
+//Admin Area Routes
 Route::get('admin/view-posts', 'AdminController@viewPosts');
 
 Route::get('admin/new-post', 'AdminController@newPost');
@@ -29,3 +32,4 @@ Route::post('admin/add-post', 'AdminController@addPost');
 Route::post('admin/update-post', 'AdminController@updatePost');
 
 Route::get('admin/delete-post/{id}', 'AdminController@deletePost');
+
