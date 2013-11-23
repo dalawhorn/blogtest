@@ -11,6 +11,9 @@
 				</div>
 			</div>
 		@endforeach
+		<div>
+			{{ $posts->links() }}
+		</div>
 	@else
 		<div>There are no posts to display.</div>
 	@endif

@@ -10,7 +10,8 @@ class PostController extends BaseController {
 	
 	public function allPosts() {
 		//$posts = Post::all();
-		$posts = Post::getAllPostsWithAuthor()->get();
+		//$posts = Post::getAllPostsWithAuthor()->get();
+		$posts = Post::getAllPostsWithAuthor()->paginate(3);
 		return View::make('allposts', array('posts' => $posts));
 	}
 	
