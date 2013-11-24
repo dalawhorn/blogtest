@@ -15,7 +15,7 @@
 Route::get('/', 'PostController@allPosts');
 Route::get('posts', 'PostController@allPosts');
 Route::get('posts/author/{id}', 'PostController@postsByAuthor');
-
+Route::get('posts/json', 'PostController@jsonFeed');
 Route::get('post/{id}', 'PostController@singlePost');
 
 //Admin Area Routes

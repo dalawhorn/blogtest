@@ -28,4 +28,26 @@ class PostController extends BaseController {
 		
 		return View::make('allposts', array('posts' => $posts, 'authors' => $authors));
 	}
+	
+	public function jsonFeed() {
+		$posts = Post::getAllPostsWithAuthor()->get();
+		$posts_array = array();
+		
+		$count = 0;
+		foreach($posts as $post) {
+			$posts_array[$count]['title'] = $post->title;
+			$posts_array[$count]['author'] = $post->name;
+			$posts_array[$count]['date_posted'] = (string)$post->created_at;
+			$posts_array[$count]['url'] = url('post/'.$post->id);
+			preg_match('|<p[^>]*>([^<]*)</p>|', $post->body, $matches);
+			$posts_array[$count]['post_preview'] = $matches[1];
+			$count++;
+		}
+		
+		//echo "<pre>";
+		//print_r($posts_array);
+		//exit;
+		
+		return Response::json($posts_array);
+	}
 }
