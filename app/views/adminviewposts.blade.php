@@ -14,7 +14,7 @@
 		<tbody>
 			@foreach($posts as $post)
 				<tr>
-					<td><a href='/post/{{ $post->id }}'>{{ $post->title }}</a></td>
+					<td>{{ link_to('post/'.$post->id, $post->title) }}</td>
 					<td>{{ $post->created_at }}</td>
 					<td><a href='edit-post/{{ $post->id }}'>Edit</a></td>
 					<td><a href='delete-post/{{ $post->id }}'>Delete</a></td>
