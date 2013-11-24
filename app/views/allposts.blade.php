@@ -6,6 +6,7 @@
 			<div>
 				<p><a href="post/{{ $post->id }}">{{ $post->title }}</a></p>
 				<p>{{ $post->name }}</p>
+				<p>{{ $post->created_at }}</p>
 				<div>
 					{{ $post->body }}
 				</div>
