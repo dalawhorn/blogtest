@@ -13,7 +13,7 @@ class Comment extends Eloquent {
 	
 	//getCommentsWithUser method returns all comments for a post with the writers name from the users table.
 	public static function getCommentsWithUser($post_id) {
-		return static::join('users', 'comments.user', '=', 'users.id')->where('comments.post', '=', $post_id)->select('comments.*', 'users.name');
+		return static::join('users', 'comments.user', '=', 'users.id')->orderBy('comments.created_at', 'desc')->where('comments.post', '=', $post_id)->select('comments.*', 'users.name');
 	}
 	
 	public static function addComment($comment_text, $user_id, $post_id) {

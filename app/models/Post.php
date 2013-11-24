@@ -18,6 +18,6 @@ class Post extends Eloquent {
 	
 	//getAllPostsWithAuthor method returns all blog posts with the author's name from the users table.
 	public static function getAllPostsWithAuthor() {
-		return static::join('users', 'posts.author', '=', 'users.id')->select('posts.*', 'users.name');
+		return static::join('users', 'posts.author', '=', 'users.id')->orderBy('posts.created_at', 'desc')->select('posts.*', 'users.name');
 	}
 }
