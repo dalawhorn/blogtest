@@ -4,6 +4,7 @@
 	<div>
 		<p>{{ $post->title }}</p>
 		<p>{{ $post->name }}</p>
+		<p>{{ $post->created_at }}</p>
 		<div>
 			{{ $post->body }}
 		</div>
