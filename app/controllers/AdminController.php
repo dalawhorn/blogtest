@@ -21,6 +21,7 @@ class AdminController extends BaseController {
 		$post = new Post;
 		$post->title = Input::get('title');
 		$post->body = Input::get('body');
+		$post->author = Auth::user()->id;
 		$result = $post->save();
 		return Redirect::to('admin/view-posts');
 	}
