@@ -9,7 +9,7 @@ class AdminController extends BaseController {
 	*/	
 	
 	public function viewPosts() {
-		$posts = Post::all();
+		$posts = Post::where('author', '=', Auth::user()->id)->get();
 		return View::make('adminviewposts', array('posts' => $posts));
 	}
 	
