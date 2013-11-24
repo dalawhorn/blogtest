@@ -12,10 +12,18 @@
 			</div>
 		@endforeach
 		<div>
+			Filter Posts by Author
+			@foreach($authors as $author)
+				<div>
+					{{ link_to('posts/author/'.$author->id, $author->name) }}
+				</div>
+			@endforeach
+		</div>
+		<div>
 			{{ $posts->links() }}
 		</div>
 	@else
 		<div>There are no posts to display.</div>
-	@endif
+	@endif	
 @stop
 

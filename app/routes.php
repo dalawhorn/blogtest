@@ -13,6 +13,8 @@
 
 //Blog Frontend Routes
 Route::get('/', 'PostController@allPosts');
+Route::get('posts', 'PostController@allPosts');
+Route::get('posts/author/{id}', 'PostController@postsByAuthor');
 
 Route::get('post/{id}', 'PostController@singlePost');
 
