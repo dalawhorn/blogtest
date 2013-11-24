@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->string('email', 100)->index();
 			$table->enum('type', array('admin', 'author', 'user'))->index();
 			$table->dateTime('created_at')->index();
+			$table->dateTime('updated_at')->index();
 			$table->softDeletes();
 		});
 	}

@@ -48,5 +48,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
-
+	
+	public static function createNewUser($name, $username, $email, $password, $type) {
+		$user = new User;
+		$user->name = $name;
+		$user->username = $username;
+		$user->email = $email;
+		$user->password = Hash::make($password);
+		$user->type = $type;
+		
+		return $user->save();
+	}
 }

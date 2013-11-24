@@ -44,6 +44,13 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('admin', function()
+{
+	if((Auth::user()->type != "admin" && Auth::user()->type != "author")) {
+		return Redirect::to('/');
+	}
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter

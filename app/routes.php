@@ -11,17 +11,13 @@
 |
 */
 
-//Route::get('/', function()
-//{
-//	return View::make('hello');
-//});
-
+//Blog Frontend Routes
 Route::get('/', 'PostController@allPosts');
 
 Route::get('post/{id}', 'PostController@singlePost');
 
 //Admin Area Routes
-Route::get('admin/view-posts', 'AdminController@viewPosts');
+Route::get('admin/view-posts', array('before' => 'auth|admin', 'uses' => 'AdminController@viewPosts'));
 
 Route::get('admin/new-post', 'AdminController@newPost');
 
@@ -33,3 +29,13 @@ Route::post('admin/update-post', 'AdminController@updatePost');
 
 Route::get('admin/delete-post/{id}', 'AdminController@deletePost');
 
+//User Login Routes
+Route::get('login', 'AuthController@login');
+
+Route::get('logout', 'AuthController@doLogout');
+
+Route::post('do-login', 'AuthController@doLogin');
+
+Route::get('account/create', 'AuthController@createAccount');
+
+Route::post('account/add', 'AuthController@addAccount');

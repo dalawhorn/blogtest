@@ -23,6 +23,11 @@
 				<li><a href="#">Link1</a></li>
 				<li><a href="#">Link2</a></li>
 			</ul>
+			
+			<ul class="right">
+				@include('navigationadmin')
+				@include('navigationlogin')
+			</ul>
 		</section>
 	</nav>
 </div>
