@@ -1,3 +1,5 @@
+@include('commentsform', array('post_id' => $post_id))
+
 @if(count($comments) > 0)
 	@foreach($comments as $comment)
 		<div>

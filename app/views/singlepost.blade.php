@@ -9,6 +9,6 @@
 		</div>
 	</div>
 	
-	@include('comments', array('comments' => $comments))
+	@include('comments', array('comments' => $comments, 'post_id' => $post_id))
 @stop
 

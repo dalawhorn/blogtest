@@ -19,15 +19,15 @@ Route::get('post/{id}', 'PostController@singlePost');
 //Admin Area Routes
 Route::get('admin/view-posts', array('before' => 'auth|admin', 'uses' => 'AdminController@viewPosts'));
 
-Route::get('admin/new-post', 'AdminController@newPost');
+Route::get('admin/new-post', array('before' => 'auth|admin', 'uses' => 'AdminController@newPost'));
 
-Route::get('admin/edit-post/{id}', 'AdminController@editPost');
+Route::get('admin/edit-post/{id}', array('before' => 'auth|admin', 'uses' => 'AdminController@editPost'));
 
-Route::post('admin/add-post', 'AdminController@addPost');
+Route::post('admin/add-post', array('before' => 'auth|admin', 'uses' => 'AdminController@addPost'));
 
-Route::post('admin/update-post', 'AdminController@updatePost');
+Route::post('admin/update-post', array('before' => 'auth|admin', 'uses' => 'AdminController@updatePost'));
 
-Route::get('admin/delete-post/{id}', 'AdminController@deletePost');
+Route::get('admin/delete-post/{id}', array('before' => 'auth|admin', 'uses' => 'AdminController@deletePost'));
 
 //User Login Routes
 Route::get('login', 'AuthController@login');
@@ -39,3 +39,6 @@ Route::post('do-login', 'AuthController@doLogin');
 Route::get('account/create', 'AuthController@createAccount');
 
 Route::post('account/add', 'AuthController@addAccount');
+
+//Comments Routes
+Route::post('comment/add', array('before' => 'auth', 'uses' => 'CommentController@addComment'));

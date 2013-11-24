@@ -21,6 +21,6 @@ class PostController extends BaseController {
 
 		//$comments = Comment::where('post', '=', $id)->get();
 		$comments = Comment::getCommentsWithUser($id)->get();
-		return View::make('singlepost', array('post' => $post, 'comments' => $comments));
+		return View::make('singlepost', array('post' => $post, 'post_id' => $id, 'comments' => $comments));
 	}
 }

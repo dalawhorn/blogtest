@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration {
 			$table->bigInteger('user')->index();
 			$table->text('comment');
 			$table->dateTime('created_at')->index();
+			$table->dateTime('updated_at');
 			$table->softDeletes();
 		});
 	}

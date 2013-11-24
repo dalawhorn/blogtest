@@ -15,4 +15,13 @@ class Comment extends Eloquent {
 	public static function getCommentsWithUser($post_id) {
 		return static::join('users', 'comments.user', '=', 'users.id')->where('comments.post', '=', $post_id)->select('comments.*', 'users.name');
 	}
+	
+	public static function addComment($comment_text, $user_id, $post_id) {
+		$comment = new Comment;
+		$comment->comment = $comment_text;
+		$comment->user = $user_id;
+		$comment->post = $post_id;
+		
+		return $comment->save();
+	}
 }
