@@ -1,9 +1,15 @@
 @if(Auth::check())
-	{{ Form::open(array('url' => 'comment/add')) }}
-		{{ Form::textArea('comment') }}
-		{{ Form::submit('Add Comment', array('class' => 'button small')) }}
-		{{ Form::hidden('post_id', $post_id) }}
-	{{ Form::close() }}
+	<div class="panel">
+		<h5>Let your voice be heard!</h5>
+		{{ Form::open(array('url' => 'comment/add')) }}
+			{{ Form::textArea('comment') }}
+			{{ Form::submit('Add Comment', array('class' => 'button small')) }}
+			{{ Form::hidden('post_id', $post_id) }}
+		{{ Form::close() }}
+	</div>
 @else
-	<div>Got something to say? {{ link_to('login', 'Login ') }} to comment.</div>
+	<div class="panel">
+		<h5>Got something to say?</h5> 
+		<p>{{ link_to('login', 'Login ') }} to comment.</p>
+	</div>
 @endif

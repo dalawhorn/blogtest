@@ -7,3 +7,10 @@
 .first_row {
 	margin-top: 20px;
 }
+
+.author_line {
+	font-size: 11pt;
+	color: #BBBBBB;
+	margin-bottom: 10px;
+	font-weight: normal;
+}

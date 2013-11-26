@@ -1,12 +1,13 @@
 @extends('master')
 
 @section('content')
-	<div>
-		<p>{{ $post->title }}</p>
-		<p>{{ $post->name }}</p>
-		<p>{{ $post->created_at }}</p>
-		<div>
-			{{ $post->body }}
+	<div class="row">
+		<div class='small-12 columns'>
+			<h1>{{ $post->title }}</h1>
+			<div class="author_line">Posted by {{ link_to('posts/author/'.$post->author, $post->name) }} on {{ date('F j, Y g:i A', strtotime($post->created_at)) }}</div>
+			<div>
+				{{ $post->body }}
+			</div>
 		</div>
 	</div>
 	
